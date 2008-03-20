@@ -12,7 +12,7 @@ more directories.
 
 =head1 VERSION
 
-Version 2.1.2
+Version 2.1.4
 
 =head1 SYNOPSIS
 
