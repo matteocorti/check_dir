@@ -7,7 +7,7 @@
 ################################################################################
 
 %define version 3.0.0
-%define release 0
+%define release 1
 %define sourcename       check_dir
 %define packagename      nagios-plugins-check-dir
 %define nagiospluginsdir %{_libdir}/nagios/plugins
@@ -26,11 +26,22 @@ Group:         Applications/System
 BuildRoot:     %{_tmppath}/%{packagename}-%{version}-%{release}-root-%(%{__id_u} -n)
 URL:           https://trac.id.ethz.ch/projects/nagios_plugins/wiki/check_dir
 Source:        https://trac.id.ethz.ch/projects/nagios_plugins/downloads/%{sourcename}-%{version}.tar.gz
+BuildArch:     noarch
 
 # Fedora build requirement (not needed for EPEL{4,5})
 
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(Test::More)
+BuildRequires: perl(Module::Install)
+BuildRequires: perl(Monitoring::Plugin)
+
+# Monitoring::Plugin package dependencies are slightly broken on EL6 and don't pull these in (rhbz#1479748)
+%if 0%{?rhel} == 6
+BuildRequires: perl(Class::Accessor::Fast)
+BuildRequires: perl(Config::Tiny)
+Requires:      perl(Class::Accessor::Fast)
+Requires:      perl(Config::Tiny)
+%endif
 
 Requires:      nagios-plugins
 
@@ -67,6 +78,9 @@ rm -rf %{buildroot}
 %{_mandir}/man1/%{sourcename}.1*
 
 %changelog
+* Wed Aug 09 2017 Matt Dainty <matt@bodgit-n-scarper.com> - 3.0.0-1
+- Small fixes to spec file for building on EL6/7
+
 * Wed Jun 29 2011 Matteo Corti <matteo.corti@id.ethz.ch> - 3.0.0-0
 - Fixed the build (plugin name, files, dependencies, ...)
 
@@ -90,5 +104,3 @@ rm -rf %{buildroot}
 
 * Mon Sep 24 2007 Matteo Corti <matteo.corti@id.ethz.ch> - 1.2-0
 - first RPM package
-
-# /usr/share/man/man1/check_dir.1
