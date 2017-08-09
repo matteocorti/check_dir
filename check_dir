@@ -2,15 +2,6 @@
 
 package main;
 
-# RCS information (required by Perl::Critic)
-# enable substitution with:
-#   $ svn propset svn:keywords "Id Revision HeadURL Source Date"
-#
-#   $Id$
-#   $Revision$
-#   $HeadURL$
-#   $Date$
-
 use 5.00800;
 
 use strict;
@@ -23,7 +14,7 @@ use Monitoring::Plugin::Range;
 use Monitoring::Plugin::Getopt;
 use Monitoring::Plugin::Threshold;
 
-our $VERSION = '3.0.0';
+our $VERSION = '3.0.1';
 
 # IMPORTANT: Nagios plugins could be executed using embedded perl in this case
 #            the main routine would be executed as a subroutine and all the

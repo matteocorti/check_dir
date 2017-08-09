@@ -26,11 +26,3 @@ Usage: check_dir [OPTIONS]
    Show details for command-line debugging (can repeat up to 3 times)
 
 
---------------------------------------------------------------------------------
-Please report bugs to: https://trac.id.ethz.ch/projects/nagios_plugins
-
-# File version information
-# $Id: README 1238 2011-05-24 06:40:44Z corti $
-# $Revision: 1238 $
-# $HeadURL: https://svn.id.ethz.ch/nagios_plugins/check_updates/README $
-# $Date: 2011-05-24 08:40:44 +0200 (Tue, 24 May 2011) $

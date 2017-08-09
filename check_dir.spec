@@ -1,13 +1,5 @@
-################################################################################
-# File version information:
-# $Id: check_updates.spec 1249 2011-05-25 08:27:23Z corti $
-# $Revision: 1249 $
-# $HeadURL: https://svn.id.ethz.ch/nagios_plugins/check_updates/check_updates.spec $
-# $Date: 2011-05-25 10:27:23 +0200 (Wed, 25 May 2011) $
-################################################################################
-
-%define version 3.0.0
-%define release 1
+%define version 3.0.1
+%define release 0
 %define sourcename       check_dir
 %define packagename      nagios-plugins-check-dir
 %define nagiospluginsdir %{_libdir}/nagios/plugins
@@ -78,6 +70,9 @@ rm -rf %{buildroot}
 %{_mandir}/man1/%{sourcename}.1*
 
 %changelog
+* Wed Aug 09 2017 Matteo Corti <matteo@corti.li> - 3.0.1-0
+- support for Perl 5.26
+
 * Wed Aug 09 2017 Matt Dainty <matt@bodgit-n-scarper.com> - 3.0.0-1
 - Small fixes to spec file for building on EL6/7
 

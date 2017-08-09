@@ -1,5 +1,6 @@
-Matteo Corti <matteo.corti@id.ethz.ch> ETH Zurich
+Matteo Corti <matteo@corti.li>
 
 Many thanks to:
 * Gunther Schlegel: report if a folder does not exist and added the missing "UKNOWN" tag
 * Thomas Karlsson:  fixing a typo in a function name
+* Matt Dainty: for the RPM spec file patch
